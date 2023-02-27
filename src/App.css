@@ -1,37 +1,25 @@
 *{
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-.App{
+#root{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  justify-content: flex-start;
 }
 
 label{
-  font-size: 2rem;
+  font-size: 1rem;
 
 }
 input{
-  margin: 1rem;
-  font-size: 2rem;
+  margin:  1rem 0 1rem 0;
+  font-size: 1rem;
+  width: 100%;
+  padding: 0.5rem;
 }
 
-table {
-  width: 100%;
-  border: solid 1px white;
-  margin: 2rem 0 2rem 0;
-  border-collapse: collapse;
-  font-size: 1.5rem;
-}
+
 th , tr , td{
   border: solid 1px white;
 
@@ -39,7 +27,88 @@ th , tr , td{
 button{
   margin: 2rem 0 2rem 0;
 }
+
+form{
+display: grid;
+}
+.mainContainer{
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+.App{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100%;
+  margin-top: 7rem;
+}
+.resultContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100%;
+  overflow: hidden;
+}
+
 .container{
-  width : 50vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  width : 100vw;
   height: auto;
+  padding: 2rem;
+}
+.submitBtn{
+  margin: 0;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+  }
+  
+  .lottieContainer{
+    width: 30%
+  }
+  table {
+    width: 50%;
+    border: solid 1px white;
+    margin: 2rem 0 2rem 0;
+    border-collapse: collapse;
+    font-size: 1.5rem;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  h1{
+    font-size: 2rem;
+  }
+  .lottieContainer{
+    width: 80%
+  }
+  table {
+    width: 90%;
+    border: solid 1px white;
+    margin: 2rem 0 2rem 0;
+    border-collapse: collapse;
+    font-size: 1rem;
+    align-items: center;
+    text-align: center;
+  }
+  
 }

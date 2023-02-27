@@ -28,12 +28,9 @@ function Home() {
   }
   return (
     <div className="App">
-      <Lottie
-        loop
-        animationData={wheel}
-        play
-        style={{ width: 550, height: 550 }}
-      />
+      <div className="lottieContainer">
+        <Lottie loop animationData={wheel} play />
+      </div>
       <form onSubmit={Random}>
         <label>
           Name :
@@ -42,7 +39,9 @@ function Home() {
             onChange={(e) => setUserName(e.target.value)}
           />
         </label>
+        <br />
         <button
+          className="submitBtn"
           disabled={(userName === "") | null ? true : false}
           type="submit"
         >

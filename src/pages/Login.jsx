@@ -31,32 +31,34 @@ function Login() {
     });
   }
   return (
-    <div>
-      <h1>Log in</h1>
-      <form onSubmit={handleLogin}>
-        <label>
-          username :
-          <input
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
-          password :
-          <input
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-        <br />
-        <button
-          disabled={(userName === "") | null ? true : false}
-          type="submit"
-        >
-          submit
-        </button>
-      </form>
+    <div className="mainContainer">
+      <div className="resultContainer">
+        <h1>Log in</h1>
+        <form onSubmit={handleLogin}>
+          <label>
+            username :
+            <input
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
+            />
+          </label>
+          <br />
+          <label>
+            password :
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </label>
+          <br />
+          <button
+            disabled={(userName === "") | null ? true : false}
+            type="submit"
+          >
+            submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

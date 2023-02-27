@@ -67,18 +67,20 @@ function Result() {
   }, []);
 
   return (
-    <div>
-      <h1>
-        {data.data.status === 1
-          ? `Congratulation ${data.data.name}`
-          : `Maybe next time ${data.data.name}`}
-      </h1>
-      <h2>
-        {data.data.status === 1 ? `Please screen capture this page` : null}
-      </h2>
-      {data.data.status === 1 ? (
-        <ReactCanvasConfetti refConfetti={getInstance} style={canvasStyles} />
-      ) : null}
+    <div className="mainContainer">
+      <div className="resultContainer">
+        <h1>
+          {data.data.status === 1
+            ? `Congratulation ${data.data.name}`
+            : `Maybe next time ${data.data.name}`}
+        </h1>
+        <h2>
+          {data.data.status === 1 ? `Please screen capture this page` : null}
+        </h2>
+        {data.data.status === 1 ? (
+          <ReactCanvasConfetti refConfetti={getInstance} style={canvasStyles} />
+        ) : null}
+      </div>
     </div>
   );
 }
