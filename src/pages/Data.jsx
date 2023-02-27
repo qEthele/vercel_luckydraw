@@ -7,6 +7,13 @@ function Data() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  function resetData() {
+    Api.get("/resetAllData").then(() => {
+      alert("Reset Data");
+      navigate("/login");
+    });
+  }
+
   useEffect(() => {
     if (location.state === null) {
       navigate("/login");
@@ -18,8 +25,8 @@ function Data() {
   }, []);
 
   return (
-    <div>
-      <h1>All lucky player data</h1>
+    <div className="container">
+      <h2>All lucky player data</h2>
       <table className="playerTable">
         <thead>
           <tr>
@@ -36,6 +43,14 @@ function Data() {
           ))}
         </tbody>
       </table>
+      <p>Total lucky player {data.length}/10</p>
+      <button
+        onClick={() => {
+          resetData();
+        }}
+      >
+        Reset All Data
+      </button>
     </div>
   );
 }

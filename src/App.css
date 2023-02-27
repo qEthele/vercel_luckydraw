@@ -25,6 +25,21 @@ input{
   font-size: 2rem;
 }
 
-.playerTable{
-  width: 50%;
+table {
+  width: 100%;
+  border: solid 1px white;
+  margin: 2rem 0 2rem 0;
+  border-collapse: collapse;
+  font-size: 1.5rem;
+}
+th , tr , td{
+  border: solid 1px white;
+
+}
+button{
+  margin: 2rem 0 2rem 0;
+}
+.container{
+  width : 50vw;
+  height: auto;
 }
