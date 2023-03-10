@@ -1,53 +1,47 @@
-import React, { useEffect, useState } from "react";
-import { Api } from "../componenst/Api";
-import { useNavigate } from "react-router-dom";
-import Lottie from "react-lottie-player";
-import wheel from "../assets/lotties/wheel.json";
+import React, { useEffect } from "react";
+import artistInfo from "../componenst/Artist";
+import { useLocation, useNavigate } from "react-router-dom";
+import bg from "../assets/bg.png";
+import logo from "../assets/logo.png";
 
 function Home() {
-  const [userName, setUserName] = useState("");
   const navigate = useNavigate();
-
-  function Random(e) {
-    e.preventDefault();
-
-    const userData = {
-      name: e.target[0].value,
-      status: Math.floor(Math.random() * 2),
-    };
-    console.log(userData);
-
-    Api.post("/mydata", userData).then((res) => {
-      let data = res.data;
-      navigate("/result", {
-        state: {
-          data,
-        },
-      });
-    });
-  }
   return (
-    <div className="App">
-      <div className="lottieContainer">
-        <Lottie loop animationData={wheel} play />
+    <div
+      className="selectArtist"
+      style={{
+        backgroundImage: `url(${bg})`,
+        backgroundSize: "100vw",
+        backgroundAttachment: "fixed",
+      }}
+    >
+      <div
+        style={{
+          width: "100vw",
+          height: "10vh",
+          padding: "0rem 2rem 0rem 2rem",
+        }}
+      >
+        <img src={logo} width="20%" style={{ float: "right" }} />
       </div>
-      <form onSubmit={Random}>
-        <label>
-          Name :
-          <input
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
-          />
-        </label>
-        <br />
-        <button
-          className="submitBtn"
-          disabled={(userName === "") | null ? true : false}
-          type="submit"
+
+      <h1 className="h1Artist">
+        กิจกรรม <span style={{ color: "red" }}>Lucky Fans</span>
+      </h1>
+      <h2 className="h2Artist">แตะเพื่อเลือกศิลปิน</h2>
+      {artistInfo.map((item) => (
+        <div
+          onClick={() => {
+            navigate("/random", {
+              state: { api: item.api, img: item.img, artist: item.name },
+            });
+          }}
+          className="artist"
+          key={item.id}
         >
-          Random
-        </button>
-      </form>
+          <img className="imageArtist" src={item.img} />
+        </div>
+      ))}
     </div>
   );
 }

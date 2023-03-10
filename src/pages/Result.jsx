@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useCallback, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import ReactCanvasConfetti from "react-canvas-confetti";
+import bg from "../assets/bg.png";
+import logo from "../assets/logo.png";
+import { Api } from "../componenst/Api";
 
 const canvasStyles = {
   position: "fixed",
@@ -17,7 +20,17 @@ function Result() {
   const [data, setData] = useState({
     data: { data: { name: null, status: null } },
   });
+
+  const [img, setImg] = useState(null);
+
+  console.log(location.state);
+  Api.post("/allData", location.state.data);
+
   useEffect(() => {
+    if (data.data.status === 1) {
+      setImg(location.state.img);
+    }
+
     makeShot(0.25, {
       spread: 26,
       startVelocity: 55,
@@ -67,20 +80,82 @@ function Result() {
   }, []);
 
   return (
-    <div className="mainContainer">
-      <div className="resultContainer">
+    <div
+      className="selectArtist"
+      style={{
+        backgroundImage: `url(${bg})`,
+        backgroundSize: "100vw",
+        backgroundAttachment: "fixed",
+        height: "100vh",
+      }}
+    >
+      <div
+        style={{
+          width: "100vw",
+          height: "10vh",
+          padding: "0rem 2rem 0rem 2rem",
+        }}
+      >
+        <img src={logo} width="20%" style={{ float: "right" }} />
+      </div>
+      {data.data.check === true ? (
+        <div className="resultContainer">
+          {data.data.status === 1 ? (
+            <div className="resultContainer">
+              <h1 className="h1Artist">Lucky Fans</h1>
+              <h2 className="h2Artist">
+                ขอแสดงความยินดี !!
+                <br />
+                คุณได้รับสิทธิ์ถ่ายภาพหมู่ (PHOTO GROUP) กับ
+                <br />
+                <span style={{ color: "red" }}>"{location.state.artist}"</span>
+              </h2>
+              <img width="80%" src={img} />
+              {data.data.status === 1 ? (
+                <ReactCanvasConfetti
+                  refConfetti={getInstance}
+                  style={canvasStyles}
+                />
+              ) : null}
+            </div>
+          ) : (
+            <div
+              className="resultContainer"
+              style={{ justifyContent: "center" }}
+            >
+              <h1 className="h1Artist">ขอแสดงความเสียใจ</h1>
+              <h2 className="h2Artist">
+                คุณไม่ได้รางวัล
+                <span style={{ color: "red" }}> {""}Lucky Fans</span>
+              </h2>
+              <img width="80%" src={img} />
+              {data.data.status === 1 ? (
+                <ReactCanvasConfetti
+                  refConfetti={getInstance}
+                  style={canvasStyles}
+                />
+              ) : null}
+            </div>
+          )}
+        </div>
+      ) : (
+        <div className="resultContainer" style={{ justifyContent: "center" }}>
+          <h1 className="h1Artist">คุณได้ใช้สิทธิไปแล้ว</h1>
+        </div>
+      )}
+
+      {/* <div className="resultContainer">
         <h1>
-          {data.data.status === 1
-            ? `Congratulation ${data.data.name}`
-            : `Maybe next time ${data.data.name}`}
+          
         </h1>
         <h2>
           {data.data.status === 1 ? `Please screen capture this page` : null}
         </h2>
+        <img width="80%" src={img} />
         {data.data.status === 1 ? (
           <ReactCanvasConfetti refConfetti={getInstance} style={canvasStyles} />
         ) : null}
-      </div>
+      </div> */}
     </div>
   );
 }
