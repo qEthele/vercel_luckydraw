@@ -87,16 +87,7 @@ justify-content: end;
   height: 100%;
   margin-top: 7rem;
 }
-.resultContainer{
-  display: flex;
-  
-  align-items: center;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
 
-  overflow: hidden;
-}
 .resultContainerFail{
   display: flex;
   
@@ -142,6 +133,17 @@ h2{
 
 
 @media only screen and (min-width: 768px) {
+  .resultContainer{
+    display: flex;
+    
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+  justify-content: center;
+    overflow: hidden;
+    width: 25%;
+  }
   h1 {
     font-size: 3.2em;
     line-height: 1.1;
@@ -163,6 +165,16 @@ h2{
 
 
 @media only screen and (max-width: 768px) {
+  .resultContainer{
+    display: flex;
+    
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+  justify-content: center;
+    overflow: hidden;
+  }
   /* For mobile phones: */
   h1{
     font-size: 2rem;
@@ -230,4 +242,12 @@ z-index: -1;
 .lottieContainer{
 height: 100vh;
 margin-top: 2.5rem;
+}
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
 }

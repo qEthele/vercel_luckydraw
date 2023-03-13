@@ -42,13 +42,13 @@ function Data() {
   return (
     <div className="mainContainerData">
       <div className="mainContainerData">
-        <h2>PP Krit luckydraw data</h2>
+        <h2 style={{ color: "red" }}>PP Krit luckydraw data</h2>
         <table className="playerTable">
           <thead>
             <tr>
               <th>Name</th>
               <th>Status</th>
-              <th>Time</th>
+              <th>Dealer Code</th>
             </tr>
           </thead>
           <tbody>
@@ -56,24 +56,24 @@ function Data() {
               <tr key={item.id}>
                 <td>{item.player_name}</td>
                 <td>{item.status}</td>
-                <td>{item.update_at}</td>
+                <td>{item.id}</td>
               </tr>
             ))}
           </tbody>
         </table>
-        <p>Total lucky player {dataPP.length}/10</p>
+        <p>Total lucky player {dataPP.length}/25</p>
         <p>
           --------------------------------------------------------------------------------------------------------------------------------
         </p>
       </div>
       <div className="mainContainerData">
-        <h2>Bellkin luckydraw data</h2>
+        <h2 style={{ color: "red" }}>Bellkin luckydraw data</h2>
         <table className="playerTable">
           <thead>
             <tr>
               <th>Name</th>
               <th>Status</th>
-              <th>Time</th>
+              <th>Dealer Code</th>
             </tr>
           </thead>
           <tbody>
@@ -81,24 +81,24 @@ function Data() {
               <tr key={item.id}>
                 <td>{item.player_name}</td>
                 <td>{item.status}</td>
-                <td>{item.update_at}</td>
+                <td>{item.id}</td>
               </tr>
             ))}
           </tbody>
         </table>
-        <p>Total lucky player {dataPP.length}/10</p>
+        <p>Total lucky player {dataBellkin.length}/25</p>
         <p>
           --------------------------------------------------------------------------------------------------------------------------------
         </p>
       </div>
       <div className="mainContainerData">
-        <h2>Three man down luckydraw data</h2>
+        <h2 style={{ color: "red" }}>Three man down luckydraw data</h2>
         <table className="playerTable">
           <thead>
             <tr>
               <th>Name</th>
               <th>Status</th>
-              <th>Time</th>
+              <th>Dealer Code</th>
             </tr>
           </thead>
           <tbody>
@@ -106,24 +106,24 @@ function Data() {
               <tr key={item.id}>
                 <td>{item.player_name}</td>
                 <td>{item.status}</td>
-                <td>{item.update_at}</td>
+                <td>{item.id}</td>
               </tr>
             ))}
           </tbody>
         </table>
-        <p>Total lucky player {dataPP.length}/10</p>
+        <p>Total lucky player {dataTmd.length}/50</p>
         <p>
           --------------------------------------------------------------------------------------------------------------------------------
         </p>
       </div>
       <div className="mainContainerData">
-        <h2>Non Tanon luckydraw data</h2>
+        <h2 style={{ color: "red" }}>Non Tanon luckydraw data</h2>
         <table className="playerTable">
           <thead>
             <tr>
               <th>Name</th>
               <th>Status</th>
-              <th>Time</th>
+              <th>Dealer Code</th>
             </tr>
           </thead>
           <tbody>
@@ -131,12 +131,12 @@ function Data() {
               <tr key={item.id}>
                 <td>{item.player_name}</td>
                 <td>{item.status}</td>
-                <td>{item.update_at}</td>
+                <td>{item.id}</td>
               </tr>
             ))}
           </tbody>
         </table>
-        <p>Total lucky player {dataPP.length}/10</p>
+        <p>Total lucky player {dataNonTanon.length}/50</p>
         <p>
           --------------------------------------------------------------------------------------------------------------------------------
         </p>

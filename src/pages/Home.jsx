@@ -24,10 +24,15 @@ function Home() {
       >
         <img src={logo} width="20%" style={{ float: "right" }} />
       </div>
-
-      <h1 className="h1Artist">
+      <h2 className="h2Artist">
+        ลุ้นเป็นผู้โชคดี
+        <br />
+        ถ่ายภาพหมู่กับศิลปินที่คุณรัก
+        <br />( 1 Dealer code / 1 สิทธิ์เท่านั้น )
+      </h2>
+      {/* <h1 className="h1Artist">
         กิจกรรม <span style={{ color: "red" }}>Lucky Fans</span>
-      </h1>
+      </h1> */}
       <h2 className="h2Artist">แตะเพื่อเลือกศิลปิน</h2>
       {artistInfo.map((item) => (
         <div

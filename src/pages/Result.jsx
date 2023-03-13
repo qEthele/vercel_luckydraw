@@ -110,7 +110,7 @@ function Result() {
                 <br />
                 <span style={{ color: "red" }}>"{location.state.artist}"</span>
               </h2>
-              <img width="80%" src={img} />
+              <img width="80%" src={img} style={{ paddingTop: "2rem" }} />
               {data.data.status === 1 ? (
                 <ReactCanvasConfetti
                   refConfetti={getInstance}

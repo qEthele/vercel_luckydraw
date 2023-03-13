@@ -33,9 +33,9 @@ function Login() {
   return (
     <div className="mainContainer">
       <div className="resultContainer">
-        <h1>Log in</h1>
-        <form onSubmit={handleLogin}>
-          <label>
+        <h1 style={{ padding: "2rem" }}>Log in</h1>
+        <form style={{ width: "100%", padding: "1rem" }} onSubmit={handleLogin}>
+          <label style={{ color: "white" }}>
             username :
             <input
               value={userName}
@@ -43,7 +43,7 @@ function Login() {
             />
           </label>
           <br />
-          <label>
+          <label style={{ color: "white" }}>
             password :
             <input
               value={password}

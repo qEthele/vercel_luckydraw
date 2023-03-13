@@ -5,17 +5,20 @@ import Lottie from "react-lottie-player";
 import wheel from "../assets/lotties/wheel.json";
 import bg from "../assets/bg.png";
 import logo from "../assets/logo.png";
+import ReactLoading from "react-loading";
 
 function Random() {
   const [userName, setUserName] = useState("");
   const [retailName, setRetailName] = useState("");
   const [tel, setTel] = useState("");
   const [id, setId] = useState("");
+  const [hideDiv, setHideDiv] = useState("none");
   const navigate = useNavigate();
   const location = useLocation();
 
   function Random(e) {
     e.preventDefault();
+    setHideDiv("block");
     console.log(location.state.api);
     const userData = {
       player_name: e.target[0].value,
@@ -43,8 +46,20 @@ function Random() {
         backgroundImage: `url(${bg})`,
         backgroundSize: "100vw",
         backgroundAttachment: "fixed",
+        height: "100vh",
       }}
     >
+      <ReactLoading
+        style={{
+          display: `${hideDiv}`,
+          fill: "red",
+          height: "64px",
+          width: "64px",
+          position: "fixed",
+        }}
+        type="spin"
+        color="red"
+      />
       <div
         style={{
           width: "100vw",
@@ -54,9 +69,14 @@ function Random() {
       >
         <img src={logo} width="20%" style={{ float: "right" }} />
       </div>
-      <h1 className="h1Artist">รายละเอียดผู้เข้าร่วมกิจกรรม</h1>
-      <h2 className="h2Artist" style={{ color: "red" }}>
-        Lucky Fans
+
+      {/* <h1 className="h1Artist" style={{ paddingTop: "2rem" }}>
+        รายละเอียดผู้เข้าร่วมกิจกรรม
+      </h1> */}
+      <h2 className="h2Artist" style={{ paddingTop: "2rem" }}>
+        กรอกชื่อของคุณเพื่อร่วมลุ้น
+        <br />
+        ถ่ายภาพหมู่กับศิลปินที่คุณรัก
       </h2>
       <div className="lottieContainer">
         <form onSubmit={Random}>
@@ -87,7 +107,8 @@ function Random() {
           </label>
           <br />
           <label>
-            เลขบัตร :
+            DEALER
+            <br /> CODE :
             <input value={id} onChange={(e) => setId(e.target.value)} />
           </label>
           <br />
