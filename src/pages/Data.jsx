@@ -40,8 +40,8 @@ function Data() {
   }, []);
 
   return (
-    <div className="mainContainerData">
-      <div className="mainContainerData">
+    <div className="mainContainerData" style={{ height: "auto" }}>
+      <div className="mainContainerData" style={{ height: "auto" }}>
         <h2 style={{ color: "red" }}>PP Krit luckydraw data</h2>
         <table className="playerTable">
           <thead>
