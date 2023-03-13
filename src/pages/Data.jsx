@@ -40,10 +40,13 @@ function Data() {
   }, []);
 
   return (
-    <div className="mainContainerData" style={{ height: "auto" }}>
+    <div
+      className="mainContainerData"
+      style={{ height: "auto", backgroundColor: "black" }}
+    >
       <div className="mainContainerData" style={{ height: "auto" }}>
         <h2 style={{ color: "red" }}>PP Krit luckydraw data</h2>
-        <table className="playerTable">
+        <table className="playerTable" style={{ color: "white" }}>
           <thead>
             <tr>
               <th>Name</th>
@@ -61,14 +64,14 @@ function Data() {
             ))}
           </tbody>
         </table>
-        <p>Total lucky player {dataPP.length}/25</p>
-        <p>
+        <p style={{ color: "white" }}>Total lucky player {dataPP.length}/25</p>
+        <p style={{ color: "white" }}>
           --------------------------------------------------------------------------------------------------------------------------------
         </p>
       </div>
       <div className="mainContainerData">
         <h2 style={{ color: "red" }}>Bellkin luckydraw data</h2>
-        <table className="playerTable">
+        <table className="playerTable" style={{ color: "white" }}>
           <thead>
             <tr>
               <th>Name</th>
@@ -86,14 +89,16 @@ function Data() {
             ))}
           </tbody>
         </table>
-        <p>Total lucky player {dataBellkin.length}/25</p>
-        <p>
+        <p style={{ color: "white" }}>
+          Total lucky player {dataBellkin.length}/25
+        </p>
+        <p style={{ color: "white" }}>
           --------------------------------------------------------------------------------------------------------------------------------
         </p>
       </div>
       <div className="mainContainerData">
         <h2 style={{ color: "red" }}>Three man down luckydraw data</h2>
-        <table className="playerTable">
+        <table className="playerTable" style={{ color: "white" }}>
           <thead>
             <tr>
               <th>Name</th>
@@ -111,14 +116,14 @@ function Data() {
             ))}
           </tbody>
         </table>
-        <p>Total lucky player {dataTmd.length}/50</p>
-        <p>
+        <p style={{ color: "white" }}>Total lucky player {dataTmd.length}/50</p>
+        <p style={{ color: "white" }}>
           --------------------------------------------------------------------------------------------------------------------------------
         </p>
       </div>
       <div className="mainContainerData">
         <h2 style={{ color: "red" }}>Non Tanon luckydraw data</h2>
-        <table className="playerTable">
+        <table className="playerTable" style={{ color: "white" }}>
           <thead>
             <tr>
               <th>Name</th>
@@ -136,8 +141,10 @@ function Data() {
             ))}
           </tbody>
         </table>
-        <p>Total lucky player {dataNonTanon.length}/50</p>
-        <p>
+        <p style={{ color: "white" }}>
+          Total lucky player {dataNonTanon.length}/50
+        </p>
+        <p style={{ color: "white" }}>
           --------------------------------------------------------------------------------------------------------------------------------
         </p>
       </div>
